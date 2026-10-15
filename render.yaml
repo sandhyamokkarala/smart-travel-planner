@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: smart-travel-planner
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run travel_app.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: TRAVEL_LLM_PROVIDER
+        value: openrouter
+      - key: TRAVEL_LLM_MODEL
+        value: deepseek/deepseek-chat-v3-0324
+      - key: OPENROUTER_API_KEY
+        sync: false

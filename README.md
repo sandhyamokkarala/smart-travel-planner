@@ -30,6 +30,17 @@ For OpenRouter instead, set `TRAVEL_LLM_PROVIDER` to `openrouter`, provide `OPEN
 and set `TRAVEL_LLM_MODEL` to an available model identifier, such as
 `deepseek/deepseek-chat-v3-0324`.
 
+## Deploy on Render
+
+The repository includes a Render Blueprint (`render.yaml`). In Render, create a new Blueprint
+instance and connect this GitHub repository. Render will configure and deploy the Streamlit web
+service; provide an OpenRouter API key when prompted for `OPENROUTER_API_KEY`. The configured
+model can be changed in the service's environment settings. The free instance may spin down when
+idle.
+
+To enable live attraction, hotel, and transport searches, add `TAVILY_API_KEY` in the service's
+environment settings. This key is optional; without it, those searches are marked mock/unavailable.
+
 ## Research providers and estimates
 
 Set `TAVILY_API_KEY` to enable live web searches for attractions, accommodation, and transport.
