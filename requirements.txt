@@ -1,0 +1,4 @@
+crewai>=1.15,<2
+requests>=2.31
+streamlit>=1.50
+pytest>=8
